@@ -1,0 +1,167 @@
+
+<c8y-form-group>
+
+    <div class="row d-flex">
+
+      <div class="col-md-7">
+       <!-- KPI title -->
+      <label for="kpi-title" >KPI title</label>
+      <input type="text" name="kpi-title" id="kpi-title" [(ngModel)]="widgetInfo.metadata.title" class="form-control" (change)="updateConfig()" />
+      </div>
+
+      <div class="col-md-3">
+        <label for="slider1">Title Font Size</label>
+        <input id="slider1" [(ngModel)]="widgetInfo.kpi.titleSize" type="range" min="10" max="80" step="0"/>
+      </div>
+      <div class="col-md-2">
+        <output style="margin-top: 30px;">{{widgetInfo.kpi.titleSize}}</output>
+      </div>
+  </div>
+      <!-- Upload icon-->
+  <div class="row d-flex" style="margin-top: 25px;">
+    <div class="col-md-7">
+
+      <label for="kpi-icon" >
+            Upload KPI icon      
+      </label>
+      <input type="file" name="kpi-icon" class="form-control" alt="Icon" (change)="updateIconInConfig($event)" />
+    </div>
+    <div class="col-md-3">
+      <label for="slider5">Image Size</label>
+      <input id="slider5" [(ngModel)]="widgetInfo.kpi.imageSize" type="range" min="20" max="200" step="0" /> 
+    </div>
+    <div class="col-md-2">
+      <output style="margin-top: 30px;">{{widgetInfo.kpi.imageSize}} x {{widgetInfo.kpi.imageSize}}</output>
+    </div>
+  </div>
+    
+    <div class="row d-flex" style="margin-top: 25px;">
+      <div class="col-md-7">
+        <!-- KPI Name -->
+    <label for="kpiName" >
+      KPI 
+    </label>
+      <ng-container>
+      <ng-select [items]="kpiNamesList" [multiple]="false" bindLabel="text"
+               bindValue="id"
+               [closeOnSelect]="true"
+               [(ngModel)]="widgetInfo.kpi.kpiName"
+               (ngModelChange)="updateConfig()"
+               placeHolder = 'select KPI'>
+        <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+            <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.text}}
+        </ng-template>
+      </ng-select>
+      </ng-container>
+
+    </div>
+      <div class="col-md-3">
+          <label for="slider2">KPI Font Size</label>
+          <input id="slider2" [(ngModel)]="widgetInfo.kpi.kpiSize" type="range" min="20" max="80" step="0" /> 
+      </div>
+      <div class="col-md-2">
+        <output style="margin-top: 30px;">{{widgetInfo.kpi.kpiSize}}</output>
+      </div>
+    </div>
+    
+      <div *ngIf="widgetInfo.kpi.kpiName == 'other'" class="row d-flex" style="margin-top: 25px;">
+        <b>Since you selected Other, property name and value must be entered </b>
+        <br />
+        <div class="col-md-8">
+          <label>Property Name </label>
+          <input type="text" class="form-control input-width" placeholder="eg. c8y_Position"
+            [(ngModel)]="widgetInfo.kpi.otherKPIName" id="label">
+        </div>
+        <div class="col-md-4">
+          <label> Property Metric </label>
+          <select class="form-control input-width" id="otherKPIValue" [(ngModel)]="widgetInfo.kpi.otherKPIValue" name="otherKPIValue">
+              <option selected value="count">Count</option>
+              <option value="value">Value</option>
+            </select>
+        </div>
+      </div>
+
+      <div class="row d-flex" style="margin-top: 25px;">
+        <div class="col-md-7">
+              <!-- KPI Unit -->
+          <label for="kpi-unit">KPI unit (optional) (eg: km, g)</label>
+          <input type="text" name="kpi-unit" id="kpi-unit" [(ngModel)]="widgetInfo.kpi.unit" class="form-control" (change)="updateConfig()" />
+        
+        </div>
+        <div class="col-md-3">
+
+          <label for="slider3">Unit Font Size</label>
+          <input id="slider3" [(ngModel)]="widgetInfo.kpi.unitSize" type="range" min="20" max="80" step="0" />
+
+        </div>
+        <div class="col-md-2">
+          <output style="margin-top: 30px;">{{widgetInfo.kpi.unitSize}}</output>
+        </div>
+      </div>
+
+      <div class="row d-flex" style="margin-top: 25px;">
+        <div class="col-md-7">
+          <!-- KPI Message -->
+          <label for="kpi-message">KPI Message (optional)</label>
+          <input type="text" name="kpi-message" id="kpi-message" [(ngModel)]="widgetInfo.kpi.message" class="form-control" (change)="updateConfig()" />
+          
+        </div>
+        <div class="col-md-3">
+          <label for="slider4">Message Font Size</label>
+          <input id="slider4" [(ngModel)]="widgetInfo.kpi.messageSize" type="range" min="10" max="50" step="0" />
+        </div>
+        <div class="col-md-2">
+          <output style="margin-top: 30px;">{{widgetInfo.kpi.messageSize}}</output>
+        </div>
+      </div>
+
+
+    <div class="row d-flex" >
+      <div class="col-md-6">
+
+        <!-- KPI color -->
+        <label for="kpi-color" style="margin-top: 25px;">
+            KPI color (in hex)
+            </label>
+        <input type="text" class="form-control" id="kpi-color" name="kpi-color" [(ngModel)]="widgetInfo.kpi.color" (change)="updateConfig()" (click)="openKPIColorPicker()" />
+        <app-color-picker [ngClass]="kpiColorPickerClosed? 'hideColorPicker' : 'showColorPicker'" (colorPickerClosed)="closeKPIColorPicker()" (colorSet)="setSelectedColorForKPI($event)" ></app-color-picker>
+      </div>
+      <div class="col-md-6">  
+        <!-- KPI Title color -->
+        <label for="title-color" style="margin-top: 25px;">
+          Title color (in hex)
+          </label>
+        <input type="text" class="form-control" id="title-color" name="title-color" [(ngModel)]="widgetInfo.kpi.titleColor" (change)="updateConfig()" (click)="openTitleColorPicker()" />
+        <app-color-picker [ngClass]="titleColorPickerClosed? 'hideColorPicker' : 'showColorPicker'" (colorPickerClosed)="closeTitleColorPicker()" (colorSet)="setSelectedColorForTitle($event)" ></app-color-picker>
+      </div>
+    </div>
+
+    <div class="row d-flex">
+      <div class="col-md-6">
+        <!-- KPI Unit color -->
+        <label for="kpi-unit-color" style="margin-top: 25px;">
+          KPI Unit color (in hex)
+          </label>
+        <input type="text" class="form-control" id="kpi-unit-color" name="kpi-unit-color" [(ngModel)]="widgetInfo.kpi.unitColor" (change)="updateConfig()" (click)="openKPIUnitColorPicker()" />
+        <app-color-picker [ngClass]="kpiUnitColorPickerClosed? 'hideColorPicker' : 'showColorPicker'" (colorPickerClosed)="closeKPIUnitColorPicker()" (colorSet)="setSelectedColorForKPIUnit($event)" ></app-color-picker>
+      </div>
+      <div class="col-md-6">    
+        <!-- KPI Message color -->
+        <label for="message-color" style="margin-top: 25px;">
+          Message color (in hex)
+          </label>
+        <input type="text" class="form-control" id="message-color" name="message-color" [(ngModel)]="widgetInfo.kpi.messageColor" (change)="updateConfig()" (click)="openMessageColorPicker()" />
+        <app-color-picker [ngClass]="messageColorPickerClosed? 'hideColorPicker' : 'showColorPicker'" (colorPickerClosed)="closeMessageColorPicker()" (colorSet)="setSelectedColorForMessage($event)" ></app-color-picker>
+      
+      </div>
+    </div>
+
+     <!-- KPI Background color -->
+   <!--        <label for="kpi-bgcolor" style="margin-top: 25px;">
+            Background color (in hex)
+            </label>
+    <input type="text" class="form-control" id="kpi-bgcolor" name="kpi-bgcolor" [(ngModel)]="widgetInfo.kpi.bgcolor" (change)="updateConfig()" (click)="openKPIBgColorPicker()" />
+    <app-color-picker [ngClass]="kpiBgColorPickerClosed? 'hideColorPicker' : 'showColorPicker'" (colorPickerClosed)="closeKPIBgColorPicker()" (colorSet)="setSelectedColorForBackground($event)" ></app-color-picker>
+  -->
+
+</c8y-form-group>

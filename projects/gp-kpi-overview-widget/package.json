@@ -1,0 +1,11 @@
+{
+  "name": "gp-kpi-overview-widget",
+  "version": "1.0.0",
+  "description": "The KPI Overview Widget help you to display the Device data as KPIs with customised icon and text.",
+  "author": "Meer Arfath - Software AG, Global Presales",
+  "license": "Apache 2.0",
+  "peerDependencies": {
+    "@angular/common": "^11.1.2",
+    "@angular/core": "^11.1.2"
+  }
+}

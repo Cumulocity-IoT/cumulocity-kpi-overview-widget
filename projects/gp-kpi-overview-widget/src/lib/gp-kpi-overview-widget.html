@@ -1,0 +1,23 @@
+<div [style.margin-top] = "getKPITitleTopMargin()">
+<ng-container>
+    <div [style.height] = "getContainerHeight()">
+    <div class="col-xs-5" style="text-align: center;">
+        <span style="display: inline-block; height: 100%; vertical-align: middle;"></span>
+        <img [style.max-width] = "getImageSize()" [style.max-height] = "getImageSize()" style="vertical-align: middle;" [src]="getKPIIcon()" />
+    </div>
+    <div class="col-xs-7" style="text-align: center;">
+        <!-- KPI title -->
+        <p  [style.color] = "getTitleColor()" [style.font-size] = "getTitleSize()" style = "margin-bottom: 5px; text-transform: uppercase; font-weight: bold;">{{getKPITitle()}}</p>
+        
+        <!-- KPI value and unit -->
+        <p><span [style.color] = "getKPIColor()" [style.font-size] = "getKPISize()" style="font-weight: bold;">{{getKPIValue()}} </span> <span [style.color] = "getUnitColor()" [style.font-size] = "getUnitSize()">{{getKPIUnit()}}</span></p>
+    </div>
+</div>
+</ng-container>
+<hr style = "border: 1px solid grey; margin-left:15px; margin-right: 15px;">
+    <div style="padding-left:15px; padding-right: 15px;">
+        <!-- KPI text     -->
+         <p [style.color] = "getMessageColor()" [style.font-size] = "getMessageSize()"><span style="white-space: wrap; overflow: hidden; text-overflow: ellipsis;">{{getKPIMessage()}}</span></p>
+
+    </div>
+</div>
