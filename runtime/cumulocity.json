@@ -4,7 +4,7 @@
   "key": "kpi-overview-runtime-widget-application-key",
   "contentSecurityPolicy": "default-src 'self'",
   "icon": {
-    "class": "fa fa-snowflake-o"
+    "class": "dlt-c8y-icon-newspaper-o"
   },
   "manifest": {
     
@@ -13,7 +13,7 @@
     "version": "2.0.0",
     "license": "Apache 2.0",
     "author": "Meer Arfath - Software AG, Global Presales",
-    "description": "The KPI Overview Widget help you to display the Device data as KPIs with customised icon and text."
+    "description": "The KPI Overview Widget help you to display the Device KPIs with customised KPI Name, icon, text, color and size."
 
   }
 }

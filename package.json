@@ -1,7 +1,7 @@
 {
   "name": "cumulocity-kpi-overview-widget",
   "version": "2.0.0",
-  "description": "The KPI Overview Widget help you to display the Device data as KPIs with customised icon and text.",
+  "description": "The KPI Overview Widget help you to display the Device KPIs with customised KPI Name, icon, text, color and size.",
   "author": "Meer Arfath - Software AG, Global Presales",
   "license": "Apache 2.0",
   "scripts": {

@@ -180,6 +180,7 @@ export class GpKpiOverviewWidgetComponent implements OnInit, AfterViewInit{
           }
         });
     }
+    // get Device details
   async getDeviceData() {
     if (this.kpi.kpiName !== null && this.kpi.kpiName !== '') {
 

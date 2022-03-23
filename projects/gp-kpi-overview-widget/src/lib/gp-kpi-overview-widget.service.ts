@@ -28,6 +28,7 @@ export class GpKpiOverviewWidgetService {
   constructor(public inventory: InventoryService) {
   }
 
+  // To get Devices availability
   async getDevicesAvailability(deviceId){
     let totalDevices = 0;
     let availableDevices = 0;
@@ -125,7 +126,7 @@ export class GpKpiOverviewWidgetService {
         }
         return {totalDevices, availableDevices, unavailableDevices};
     }
-
+// To get Firmware Risks
   async getFirmwareRisks(deviceId){
     let highRiskCount = 0;
     let mediumRiskCount = 0;
@@ -176,7 +177,7 @@ export class GpKpiOverviewWidgetService {
     }
     return {highRiskCount, mediumRiskCount, lowRiskCount, noRiskCount};
   }
-
+// Calculate Risk counts of each risk type
   calculateRiskCount(device){
     let atRisk = false;
     let noRisk = 0;
@@ -208,6 +209,7 @@ export class GpKpiOverviewWidgetService {
       }
       return {noRisk, lowRisk, mediumRisk, highRisk}
   }
+  // To get Alarms
   async getAlarms(deviceId){
     let totalAlarms = 0;
     let majorAlertsCount = 0;
@@ -255,7 +257,7 @@ export class GpKpiOverviewWidgetService {
     return {totalAlarms, majorAlertsCount, minorAlertsCount, criticalAlertsCount};
   }
 
-
+// count alarms of each type
   calculateAlarmsCount(device){
     let minorAlerts = 0;
     let majorAlerts = 0;
@@ -274,7 +276,7 @@ export class GpKpiOverviewWidgetService {
         }
         return {minorAlerts, majorAlerts, criticalAlerts}
   }
-
+// To get KPi If any other KPI is added 
   async getNewKPICount(deviceId, newKPI){
     let newKPICount = 0;
     let response: any = null;
@@ -310,7 +312,7 @@ export class GpKpiOverviewWidgetService {
     }
     return newKPICount;
   }
-
+// get KPI Value of new other KPI
   async getNewKPIValue(deviceId, newKPI){
     let response: any = null;
     let newKPIValue;
