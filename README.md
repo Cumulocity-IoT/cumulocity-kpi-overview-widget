@@ -1,14 +1,14 @@
 
-  # Cumulocity KPI Overview Widget[<img width="35" src="https://user-images.githubusercontent.com/67993842/97668428-f360cc80-1aa7-11eb-8801-da578bda4334.png"/>](https://github.com/SoftwareAG/cumulocity-rest-based-grid-widget/releases/download/2.0.0/rest-based-grid-runtime-widget-2.0.0.zip)
-The Cumulocity KPI Overview Widget help you to display the Device KPIs with customised KPI Name, icon, text, color and size..
+  # Cumulocity KPI Overview Widget[<img width="35" src="https://user-images.githubusercontent.com/67993842/97668428-f360cc80-1aa7-11eb-8801-da578bda4334.png"/>](https://github.com/SoftwareAG/cumulocity-kpi-overview-widget/releases/download/2.0.0/kpi-overview-runtime-widget-2.0.0.zip)
+The Cumulocity KPI Overview Widget help you to display the Device KPIs with customised KPI Name, icon, text, color and size.
 
 ### Please choose Cumulocity KPI Overview Widget release based on Cumulocity/Application builder version:
 
-|APPLICATION BUILDER | CUMULOCITY | Cumulocity Rest Based Grid Widget |
+|APPLICATION BUILDER | CUMULOCITY | Cumulocity KPI Overview Widget |
 |--------------------|------------|-----------------------|
 | 1.3.x              | >= 1011.x.x| 2.x.x                 |
 
-![RestBasedGrid](https://user-images.githubusercontent.com/16031030/159456017-357ec719-b3b0-4fba-9977-f9a39ae59e93.png)
+![kpioverview](https://user-images.githubusercontent.com/16031030/159650661-e1fe4d62-5724-432a-af60-d25b6d922f12.jpg)
 
 
 ## Features
@@ -29,7 +29,7 @@ The Cumulocity KPI Overview Widget help you to display the Device KPIs with cust
   
 ### Runtime Widget Deployment?
 
-* This widget support runtime deployment. Download [Runtime Binary](https://github.com/SoftwareAG/cumulocity-rest-based-grid-widget/releases/download/2.0.0/rest-based-grid-runtime-widget-2.0.0.zip)  and follow runtime deployment instructions.
+* This widget support runtime deployment. Download [Runtime Binary](https://github.com/SoftwareAG/cumulocity-kpi-overview-widget/releases/download/2.0.0/kpi-overview-runtime-widget-2.0.0.zip)  and follow runtime deployment instructions.
   
 
 ### Installation of widget through App Builder
@@ -74,7 +74,7 @@ The Cumulocity KPI Overview Widget help you to display the Device KPIs with cust
     npm i @angular/material@11.1.2 ngx-bootstrap@6.2.0 @ng-select/ng-select@6.1.0"
 
     ```
-2. Grab the KPI Overview widget **[Latest Release Binary](  https://github.com/SoftwareAG/cumulocity-rest-based-grid-widget/releases/download/2.0.0/gp-rest-based-grid-widget-2.0.0.tgz)**.
+2. Grab the KPI Overview widget **[Latest Release Binary](https://github.com/SoftwareAG/cumulocity-kpi-overview-widget/releases/download/2.0.0/gp-kpi-overview-widget-2.0.0.tgz)**.
 
 
 3. Install the Binary file in app builder.
@@ -147,7 +147,7 @@ The Cumulocity KPI Overview Widget help you to display the Device KPIs with cust
 
     ```  
 
-    git clone https://github.com/SoftwareAG/cumulocity-rest-based-grid-widget.git
+    git clone https://github.com/SoftwareAG/cumulocity-kpi-overview-widget.git
 
     ```
 
