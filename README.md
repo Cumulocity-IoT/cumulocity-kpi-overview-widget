@@ -2,6 +2,9 @@
   # Cumulocity KPI Overview Widget[<img width="35" src="https://user-images.githubusercontent.com/67993842/97668428-f360cc80-1aa7-11eb-8801-da578bda4334.png"/>](https://github.com/SoftwareAG/cumulocity-kpi-overview-widget/releases/download/2.0.0/kpi-overview-runtime-widget-2.0.0.zip)
 The Cumulocity KPI Overview Widget help you to display the Device KPIs with customised KPI Name, icon, text, color and size.
 
+> ### ⚠️ This project is no longer under development. Please use [cumulocity-kpi-overview-plugin](https://github.com/SoftwareAG/cumulocity-kpi-overview-plugin) for Application Builder >=2.x.x and Cumulocity >=1016.x.x⚠️
+
+
 ### Please choose Cumulocity KPI Overview Widget release based on Cumulocity/Application builder version:
 
 |APPLICATION BUILDER | CUMULOCITY | Cumulocity KPI Overview Widget |
